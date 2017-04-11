@@ -25,6 +25,11 @@ $(document).ready(function(){
 	  splitTextTimeline.staggerFrom(mySplitText.chars, 0.6, {scale:4, autoAlpha:0,  rotationX:-180,  transformOrigin:"100% 50%", ease:Back.easeOut}, 0.05);
 	}
 
+	// HIDE EMAIL **************
+	var eMail = 'gmail.com';
+	eMail = ('genek.klim@'+eMail);
+	$('.envelope').attr('href', 'mailto:' + eMail + '?subject=JOB OFFER');
+
 	// Init ScrollMagic
 	var controller = new ScrollMagic.Controller();
 

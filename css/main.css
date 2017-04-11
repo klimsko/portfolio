@@ -217,6 +217,73 @@ body {
         display: none;
     }
 
+/* SOCIAL BUTTONS */
+#sticky-social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#sticky-social li {
+    margin-top: 2px;
+}
+#sticky-social {
+    right: 0;
+    position: fixed;
+    top: 50px;
+    z-index: 999;
+}
+#sticky-social a {
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+    display: block;
+    height: 35px;
+    font: 16px "Open Sans", sans-serif;
+    line-height: 35px;
+    position: relative;
+    text-align: center;
+    width: 35px;
+}
+#sticky-social a span {
+    line-height: 35px;
+    right: -120px;
+    position: absolute;
+    text-align:center;
+    width:120px;
+    transition: right .5s ease;
+}
+#sticky-social a:hover span {
+    right: 100%;
+}
+
+#sticky-social i{
+    color: #fff;
+}
+
+#sticky-social .facebook,
+#sticky-social .facebook:hover,
+#sticky-social .facebook span { background: #3B5998; }
+
+#sticky-social .linkedin,
+#sticky-social .linkedin:hover,
+#sticky-social .linkedin span { background: #0077B5; }  
+
+#sticky-social .envelope,
+#sticky-social .envelope:hover,
+#sticky-social .envelope span { background: #D24130; }  
+
+#sticky-social .skype,
+#sticky-social .skype:hover,
+#sticky-social .skype span { background: #009EE5; }  
+
+#sticky-social .phone,
+#sticky-social .phone:hover,
+#sticky-social .phone span { background: #eb4924; }  
+
+#sticky-social .github,
+#sticky-social .github:hover,
+#sticky-social .github span { background: #000; }  
+
 
 #intro {
     height: 100vh;
@@ -412,14 +479,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
 }
 #carousel ul li img{
     /*width: 100%;
     object-fit: none;*/
     flex-shrink: 0;
     min-width: 100%;
-    min-height: 100%
+    min-height: 100%;
 }
 #carousel {
     position: relative;
@@ -636,3 +703,4 @@ body {
         page-break-after: avoid;
     }
 }
+
