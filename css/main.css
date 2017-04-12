@@ -450,7 +450,7 @@ body {
     z-index: 2;
 }
 .preview, .go-to-git {
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.5);
+    box-shadow: none;
     position: absolute;
     bottom: 10%;
     width: 150px;
@@ -459,7 +459,7 @@ body {
     cursor: pointer;
     z-index: 3;
     border-top: 2px solid #fff;
-    border-radius: 50%;
+    border-radius: 10%;
     -webkit-transition: border-radius 1s ease;
     -moz-transition: border-radius 1s ease;
     -o-transition: border-radius 1s ease;
@@ -481,8 +481,8 @@ body {
     transform: translateX(-110%);
 }
 .preview:hover, .go-to-git:hover {
-    border-radius: 10%;
-    box-shadow: none;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.5);
+    border-radius: 50%;
 }
 
 .go-to-git {
