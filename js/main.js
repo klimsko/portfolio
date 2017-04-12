@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	setTimeout(function(){
         $('body').addClass('loaded');
-        animationText();
+        setTimeout(animatedText, 300);
     }, 1000);
 
 	// Animation Contacts Text with SplitText
@@ -19,7 +19,7 @@ $(document).ready(function(){
 	  mySplitText.revert();
 	}
 
-	function animationText(){
+	function animatedText(){
 	  kill();
 	  mySplitText.split({type:"chars, words"}); 
 	  splitTextTimeline.staggerFrom(mySplitText.chars, 0.6, {scale:4, autoAlpha:0,  rotationX:-180,  transformOrigin:"100% 50%", ease:Back.easeOut}, 0.05);
@@ -78,12 +78,12 @@ $(document).ready(function(){
 			triggerHook: 0.9
 		})
 		.setClassToggle(this, 'fade-in') // add class to project01
-		.addIndicators({
-			name: 'fade scene',
-			colorTrigger: 'black',
-			colorStart: '#75C695',
-			colorEnd: 'pink'
-		}) // this requires a plugin
+		// .addIndicators({
+		// 	name: 'fade scene',
+		// 	colorTrigger: 'black',
+		// 	colorStart: '#75C695',
+		// 	colorEnd: 'pink'
+		// }) // this requires a plugin
 		.addTo(controller);
 
 	});

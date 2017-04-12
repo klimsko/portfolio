@@ -251,13 +251,10 @@ body {
     text-align:center;
     width:120px;
     transition: right .5s ease;
+    z-index: -1;
 }
 #sticky-social a:hover span {
     right: 100%;
-}
-
-#sticky-social i{
-    color: #fff;
 }
 
 #sticky-social .facebook,
@@ -299,7 +296,8 @@ body {
     border: 12px solid #FFF;
     width: 50%;
     height: auto;
-    min-width: 400px;
+    box-sizing: border-box;
+    min-width: 300px;
 }
 #intro .content p {
     font-size: 3rem;
@@ -344,7 +342,7 @@ body {
 }
 #intro .contacts {
     text-align: center;
-    font-family: 'Kalam', cursive;
+    /*font-family: 'Open+Sans', cursive;*/
     position: absolute;
     top: 85%;
     left: 50%;
@@ -352,7 +350,7 @@ body {
     /*border: 2px solid #FFF;*/
     width: 50%;
     height: auto;
-    min-width: 400px;
+    min-width: 300px;
 }
 .project {
     text-align: center;
@@ -450,6 +448,46 @@ body {
     max-width: 1140px;
     position: relative;
     z-index: 2;
+}
+.preview, .go-to-git {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.5);
+    position: absolute;
+    bottom: 10%;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    z-index: 3;
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    -webkit-transition: border-radius 1s ease;
+    -moz-transition: border-radius 1s ease;
+    -o-transition: border-radius 1s ease;
+    transition: border-radius 1s, box-shadow 1s ease;
+    
+}
+.preview a, .go-to-git a{
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.preview span, .go-to-git span {
+    padding: 5px;
+}
+.preview {
+    left: 50%;
+    transform: translateX(-110%);
+}
+.preview:hover, .go-to-git:hover {
+    border-radius: 10%;
+    box-shadow: none;
+}
+
+.go-to-git {
+    right: 50%;
+    transform: translateX(110%);
 }
 .carousel-container {
     margin-bottom: 5vh;
@@ -549,17 +587,39 @@ body {
 
 @media only screen and (min-width: 480px) {
     /* =General */
-
+    
     /* =Header */
 
     /* =Footer */
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
     /* =General */
-
+    #sticky-social {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    }
+    #sticky-social ul li{
+        display: inline-block;
+    }
+    #sticky-social a span {
+        display: none;
+    }
     /* =Header */
-
+    #intro .content {
+    border: 10px solid #FFF;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+    #intro .content p {
+        font-size: 2rem;
+    }
+    #intro .for span{
+        font-size: 1.5rem;
+    }
     /* =Footer */
 }
 
