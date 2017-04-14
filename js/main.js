@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	// Animation Contacts Text with SplitText
 
-	var $quote = $(".contacts"),
+	var $quote = $(".my-name"),
 	    mySplitText = new SplitText($quote, {type:"words"}),
 	    splitTextTimeline = new TimelineLite();
 
@@ -54,10 +54,10 @@ $(document).ready(function(){
 	$('.bcg-parallax').each(function(){
 
 		var parallaxTl = new TimelineMax();
-	
+
 		parallaxTl
-			.from(this.children[1], 0.4, {autoAlpha: 0, ease:Power0.easeNone}, 0.5)
-			.from(this.children[0], 2, {y: '-50%', ease:Power0.easeNone}, 0)
+			.from(this.children[1], 0.9, {autoAlpha: 0, ease:Power0.easeNone}, 0.1)
+			// .from(this.children[0], 2, {y: '-50%', ease:Power0.easeNone}, 0)
 			;
 
 		var slideParallaxScene = new ScrollMagic.Scene({
