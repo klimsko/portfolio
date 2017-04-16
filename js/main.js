@@ -57,36 +57,37 @@ $(document).ready(function(){
 
 		parallaxTl
 			.from(this.children[1], 0.9, {autoAlpha: 0, ease:Power0.easeNone}, 0.1)
+			.from(this.children[2], 20, {x:-1100})
 			// .from(this.children[0], 2, {y: '-50%', ease:Power0.easeNone}, 0)
 			;
 
 		var slideParallaxScene = new ScrollMagic.Scene({
 			triggerElement: this,
 			triggerHook: 1,
-			duration: '100%'
+			duration: '50%'
 		})
 		.setTween(parallaxTl)
 		.addTo(controller);
 	});
 
 	// loop through each .project element
-	$('.project').each(function(){
+	// $('.project').each(function(){
 		
-		// build a scene
-		var ourScene = new ScrollMagic.Scene({
-			triggerElement: this.children[0],
-			triggerHook: 0.9
-		})
-		.setClassToggle(this, 'fade-in') // add class to project01
-		// .addIndicators({
-		// 	name: 'fade scene',
-		// 	colorTrigger: 'black',
-		// 	colorStart: '#75C695',
-		// 	colorEnd: 'pink'
-		// }) // this requires a plugin
-		.addTo(controller);
+	// 	// build a scene
+	// 	var ourScene = new ScrollMagic.Scene({
+	// 		triggerElement: this.children[0],
+	// 		triggerHook: 0.9
+	// 	})
+	// 	.setClassToggle(this, 'fade-in') // add class to project01
+	// 	// .addIndicators({
+	// 	// 	name: 'fade scene',
+	// 	// 	colorTrigger: 'black',
+	// 	// 	colorStart: '#75C695',
+	// 	// 	colorEnd: 'pink'
+	// 	// }) // this requires a plugin
+	// 	.addTo(controller);
 
-	});
+	// });
 
 // CAROUSEL ****************
 var carouselList = $('#carousel ul');
