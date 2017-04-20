@@ -5,7 +5,7 @@ $(document).ready(function(){
         setTimeout(animatedText, 300);
     }, 1000);
 
-	// Animation Contacts Text with SplitText
+	// Animation .my-name Text with SplitText
 
 	var $quote = $(".my-name"),
 	    mySplitText = new SplitText($quote, {type:"words"}),
@@ -31,12 +31,8 @@ $(document).ready(function(){
 	$('.envelope').attr('href', 'mailto:' + eMail + '?subject=JOB OFFER');
 	// HIDE EMAIL END**************
 
-	$( window ).resize(function(){
-		$window = $(window);
-		
-		if ($window.width() > 800) {
-
-			// Init ScrollMagic
+	function parallax(){
+		// Init ScrollMagic
 			var controller = new ScrollMagic.Controller();
 
 			// pin the intro
@@ -75,9 +71,13 @@ $(document).ready(function(){
 				.setTween(parallaxTl)
 				.addTo(controller);
 			});
+	}
 
-		}
-	});
+	if ($(window).width() > 800){
+		
+		parallax();
+
+	}
 
 // CAROUSEL ****************
 var carouselList = $('#carousel ul');
