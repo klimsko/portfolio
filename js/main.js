@@ -29,65 +29,55 @@ $(document).ready(function(){
 	var eMail = 'gmail.com';
 	eMail = ('genek.klim@'+eMail);
 	$('.envelope').attr('href', 'mailto:' + eMail + '?subject=JOB OFFER');
+	// HIDE EMAIL END**************
 
-	// Init ScrollMagic
-	var controller = new ScrollMagic.Controller();
-
-	// pin the intro
-	var pinIntroScene = new ScrollMagic.Scene({
-		triggerElement: '#intro',
-		triggerHook: 0,
-		duration: '50%'
-	})
-	.setPin('#intro', {pushFollowers: false})
-	.addTo(controller);
-
-	// pin again
-	var pinIntroScene2 = new ScrollMagic.Scene({
-		triggerElement: '#first',
-		triggerHook: 0.32
-	})
-	.setPin('#intro', {pushFollowers: false})
-	.addTo(controller);
-
-	// loop through each parallax scene
-	$('.bcg-parallax').each(function(){
-
-		var parallaxTl = new TimelineMax();
-
-		parallaxTl
-			.from(this.children[1], 0.9, {autoAlpha: 0, ease:Power0.easeNone}, 0.1)
-			.from(this.children[2], 20, {x:-1100})
-			// .from(this.children[0], 2, {y: '-50%', ease:Power0.easeNone}, 0)
-			;
-
-		var slideParallaxScene = new ScrollMagic.Scene({
-			triggerElement: this,
-			triggerHook: 1,
-			duration: '50%'
-		})
-		.setTween(parallaxTl)
-		.addTo(controller);
-	});
-
-	// loop through each .project element
-	// $('.project').each(function(){
+	$( window ).resize(function(){
+		$window = $(window);
 		
-	// 	// build a scene
-	// 	var ourScene = new ScrollMagic.Scene({
-	// 		triggerElement: this.children[0],
-	// 		triggerHook: 0.9
-	// 	})
-	// 	.setClassToggle(this, 'fade-in') // add class to project01
-	// 	// .addIndicators({
-	// 	// 	name: 'fade scene',
-	// 	// 	colorTrigger: 'black',
-	// 	// 	colorStart: '#75C695',
-	// 	// 	colorEnd: 'pink'
-	// 	// }) // this requires a plugin
-	// 	.addTo(controller);
+		if ($window.width() > 800) {
 
-	// });
+			// Init ScrollMagic
+			var controller = new ScrollMagic.Controller();
+
+			// pin the intro
+			var pinIntroScene = new ScrollMagic.Scene({
+				triggerElement: '#intro',
+				triggerHook: 0,
+				duration: '50%'
+			})
+			.setPin('#intro', {pushFollowers: false})
+			.addTo(controller);
+
+			// pin again
+			var pinIntroScene2 = new ScrollMagic.Scene({
+				triggerElement: '#first',
+				triggerHook: 0.32
+			})
+			.setPin('#intro', {pushFollowers: false})
+			.addTo(controller);
+
+			// loop through each parallax scene
+			$('.bcg-parallax').each(function(){
+
+				var parallaxTl = new TimelineMax();
+
+				parallaxTl
+					.from(this.children[1], 0.9, {autoAlpha: 0, ease:Power0.easeNone}, 0.1)
+					.from(this.children[2], 20, {x:-1100})
+					// .from(this.children[0], 2, {y: '-50%', ease:Power0.easeNone}, 0)
+					;
+
+				var slideParallaxScene = new ScrollMagic.Scene({
+					triggerElement: this,
+					triggerHook: 1,
+					duration: '50%'
+				})
+				.setTween(parallaxTl)
+				.addTo(controller);
+			});
+
+		}
+	});
 
 // CAROUSEL ****************
 var carouselList = $('#carousel ul');
